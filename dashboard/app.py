@@ -7,7 +7,7 @@ import os
 
 # ── Configuración de página ──────────────────────────────────────────────────
 st.set_page_config(
-    page_title="CaféData Ops",
+    page_title="Caffé Ops",
     page_icon="☕",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -60,7 +60,7 @@ df, fuente = cargar_datos()
 # ── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.image("https://em-content.zobj.net/source/twitter/376/hot-beverage_2615.png", width=60)
-    st.title("CaféData Ops")
+    st.title("Caffé Ops")
     st.caption(f"Fuente de datos: **{fuente}**")
     st.divider()
 
@@ -92,7 +92,7 @@ else:
     df_f = df[df["Item"].isin(items_sel) & df["Payment Method"].isin(metodos_sel)]
 
 # ── Header ───────────────────────────────────────────────────────────────────
-st.title("CaféData Ops — Dashboard de Ventas")
+st.title("Caffé Ops — Dashboard de Ventas")
 st.caption("Pipeline DataOps automatizado · datos limpios y validados")
 st.divider()
 
@@ -181,4 +181,4 @@ with st.expander("Ver datos limpios y validados"):
         "ventas_limpias.csv", "text/csv"
     )
 
-st.caption("CaféData Ops 2026 · Jaime Barrales · Gabriel Méndez · Iván Álvarez")
+st.caption("Caffé Ops 2026 · Jaime Barrales · Gabriel Méndez · Iván Álvarez")
