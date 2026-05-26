@@ -29,7 +29,7 @@ DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 def run_pipeline():
     print("=" * 60)
-    print("CaféData Ops — Pipeline ETL")
+    print("Caffé Ops — Pipeline ETL")
     print("=" * 60)
     inicio = time.time()
     logging.info("Pipeline iniciado")
