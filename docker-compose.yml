@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:15-alpine
+    container_name: cafedataops_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cafedataops
+      POSTGRES_USER: cafe_user
+      POSTGRES_PASSWORD: cafe_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cafe_user -d cafedataops"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  pipeline:
+    build: .
+    container_name: cafedataops_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: cafedataops
+      DB_USER: cafe_user
+      DB_PASSWORD: cafe_pass
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+
+volumes:
+  postgres_data:

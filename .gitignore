@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+logs/*.log
+logs/rechazados.csv
+data/processed/
+.DS_Store

@@ -1,0 +1,506 @@
+Transaction ID,Item,Quantity,Price Per Unit,Total Spent,Payment Method,Location,Transaction Date
+T0282,Cake,4,3.2,12.8,Mobile Pay,Drive-through,2024-06-12
+T0274,Cappuccino,1,3.5,3.5,Debit Card,Takeaway,2024-01-29
+T0252,Cookie,2,1.5,3.0,Cash,In-store,2024-03-11
+T0330,Espresso,4,2.0,8.0,Cash,Takeaway,2024-03-01
+T0041,,2,3.5,7.0,Mobile Pay,In-store,2024-05-01
+T0047,Juice,2,2.8,5.6,Cash,Takeaway,2024-05-20
+T0375,Cake,2,3.2,6.4,Credit Card,Takeaway,2024-05-08
+T0050,Muffin,1,2.2,ERROR,Credit Card,Takeaway,2024-01-01
+T0119,Coffee,1,2.5,2.5,Mobile Pay,In-store,2024-04-28
+T0460,Cake,1,-3.2,3.2,Cash,Takeaway,2024-03-29
+T0143,Juice,1,2.8,2.8,Cash,Takeaway,2024-02-26
+T0397,Cookie,1,1.5,1.5,Cash,Takeaway,2024-05-06
+T0401,Cake,2,3.2,6.4,Debit Card,Drive-through,2024-03-14
+T0407,Espresso,2,2.0,4.0,Debit Card,Drive-through,2024-03-22
+T0007,Cookie,3,1.5,ERROR,Credit Card,In-store,2024-03-27
+T0104,Sandwich,3,4.5,13.5,Mobile Pay,Drive-through,2024-05-09
+T0176,Latte,2,3.8,7.6,Debit Card,Takeaway,2024-06-26
+T0465,Latte,2,3.8,7.6,Mobile Pay,Drive-through,2024-02-02
+T0195,Cookie,4,1.5,6.0,UNKNOWN,Takeaway,2024-06-18
+T0031,Latte,3,3.8,ERROR,Debit Card,In-store,2024-01-15
+T0434,Coffee,1,2.5,2.5,Credit Card,Drive-through,2024-01-10
+T0210,Juice,3,2.8,8.4,Cash,Takeaway,2024-03-14
+T0236,,1,1.5,1.5,Debit Card,Drive-through,2024-06-14
+T0137,,2,2.8,5.6,Mobile Pay,Drive-through,2024-06-05
+T0367,Cookie,1,1.5,1.5,Debit Card,Takeaway,2024-02-10
+T0114,Tea,4,1.8,7.2,Mobile Pay,Drive-through,2024-05-19
+T0260,Latte,3,3.8,11.4,Credit Card,Drive-through,2024-01-16
+T0461,LATTE  ,1,3.8,3.8,Cash,Takeaway,2024-01-09
+T0051,Muffin,3,2.2,6.6,Mobile Pay,Takeaway,2024-04-18
+T0431,Cookie,4,1.5,6.0,Cash,Drive-through,2024-02-05
+T0181,Cookie,4,1.5,6.0,Mobile Pay,In-store,2024-02-22
+T0393,Cappuccino,2,3.5,7.0,Debit Card,Drive-through,2024-03-21
+T0180,Juice,4,2.8,11.2,Cash,In-store,2024-05-12
+T0445,Juice,3,2.8,8.4,Debit Card,ERROR,2024-05-29
+T0008,Latte,1,3.8,3.8,Mobile Pay,In-store,2024-04-01
+T0234,Latte,4,3.8,ERROR,Mobile Pay,Takeaway,2024-01-09
+T0094,Cake,3,3.2,9.6,Mobile Pay,Takeaway,2024-04-23
+T0126,Latte,2,3.8,7.6,Mobile Pay,Drive-through,2024-03-06
+T0336,Latte,3,3.8,11.4,Cash,Drive-through,2024-05-19
+T0112,Cappuccino,4,3.5,14.0,Mobile Pay,Drive-through,2024-06-27
+T0201,Sandwich,4,4.5,18.0,Debit Card,Drive-through,2024-05-04
+T0174,Cake,4,3.2,12.8,Mobile Pay,In-store,2024-04-30
+T0270,,3,2.8,8.4,Credit Card,Takeaway,2024-03-20
+T0033,Latte,2,3.8,7.6,Credit Card,Drive-through,2024-05-01
+T0087,Tea,1,1.8,1.8,Mobile Pay,In-store,2024-05-13
+T0455,Sandwich,4,4.5,18.0,Cash,ERROR,2024-02-22
+T0466,Cappuccino,1,3.5,ERROR,Cash,Takeaway,2024-04-28
+T0277,Cappuccino,2,3.5,7.0,Debit Card,Takeaway,99/99/9999
+T0048,Latte,1,3.8,3.8,UNKNOWN,In-store,2024-03-01
+T0471,Coffee,4,2.5,ERROR,Cash,ERROR,2024-01-12
+T0156,Latte,1,3.8,3.8,Credit Card,In-store,2024-05-24
+T0235,Cookie,2,1.5,3.0,Mobile Pay,Takeaway,2024-03-01
+T0072,Espresso,1,2.0,2.0,Debit Card,Drive-through,99/99/9999
+T0212,Cake,3,3.2,9.6,Mobile Pay,Drive-through,2024-03-05
+T0116,,4,2.2,8.8,Cash,Takeaway,2024-03-27
+T0247,Latte,4,3.8,15.2,Mobile Pay,Takeaway,2024-05-11
+T0049,Espresso,4,2.0,8.0,Mobile Pay,ERROR,2024-02-24
+T0163,Juice,4,2.8,11.2,Debit Card,In-store,2024-02-29
+T0127,Cookie,2,1.5,3.0,Cash,In-store,2024-03-20
+T0347,Cookie,3,-1.5,4.5,Cash,Takeaway,2024-04-21
+T0415,Cookie,4,1.5,6.0,Credit Card,Takeaway,2024-06-25
+T0291,Espresso,4,-2.0,8.0,Mobile Pay,ERROR,2024-05-28
+T0394,Cappuccino,2,3.5,7.0,Mobile Pay,Drive-through,2024-04-29
+T0045,Latte,2,3.8,7.6,Credit Card,In-store,2024-05-17
+T0345,Sandwich,4,4.5,18.0,Debit Card,In-store,2024-06-14
+T0100,Muffin,4,2.2,8.8,Mobile Pay,In-store,2024-02-07
+T0218,Cookie,2,1.5,3.0,Credit Card,Drive-through,2024-03-05
+T0101,Coffee,1,2.5,2.5,Mobile Pay,In-store,2024-02-15
+T0238,Latte,4,3.8,15.2,Cash,Drive-through,2024-02-24
+T0168,Cake,3,3.2,9.6,Mobile Pay,In-store,2024-04-29
+T0385,Juice,2,2.8,5.6,Mobile Pay,Takeaway,2024-04-26
+T0426,Cookie,4,1.5,6.0,Debit Card,Drive-through,2024-05-02
+T0373,Espresso,3,2.0,6.0,Cash,Takeaway,2024-04-29
+T0058,Muffin,3,2.2,6.6,Debit Card,In-store,2024-06-20
+T0178,Juice,1,2.8,2.8,Debit Card,Takeaway,2024-03-23
+T0482,Cappuccino,3,3.5,ERROR,Cash,Takeaway,2024-04-04
+T0172,Cappuccino,1,3.5,3.5,Debit Card,Drive-through,2024-01-11
+T0207,Sandwich,4,4.5,18.0,Credit Card,In-store,2024-02-14
+T0004,Sandwich,1,4.5,ERROR,Credit Card,Drive-through,2024-06-15
+T0153,Latte,1,3.8,3.8,Debit Card,Takeaway,2024-05-02
+T0196,Espresso,4,2.0,8.0,Cash,In-store,2024-05-08
+T0261,Cake,3,3.2,9.6,Cash,Takeaway,2024-03-31
+T0192,,3,2.8,ERROR,Debit Card,Drive-through,2024-05-19
+T0175,Cookie,4,1.5,6.0,Debit Card,Takeaway,2024-06-20
+T0476,COFFEE  ,2,2.5,5.0,Mobile Pay,Drive-through,2024-05-06
+T0085,Cake,4,3.2,12.8,Debit Card,Drive-through,2024-03-21
+T0497,Espresso,2,2.0,4.0,Mobile Pay,In-store,2024-05-18
+T0092,MUFFIN  ,2,2.2,ERROR,Debit Card,Takeaway,2024-05-20
+T0420,Tea,4,1.8,7.2,Credit Card,In-store,2024-03-12
+T0029,Sandwich,2,4.5,9.0,UNKNOWN,Takeaway,2024-02-11
+T0052,Sandwich,4,4.5,18.0,Credit Card,In-store,2024-03-16
+T0263,Cookie,1,1.5,1.5,Credit Card,In-store,2024-06-17
+T0215,Cake,3,3.2,9.6,Debit Card,In-store,2024-06-17
+T0103,Latte,4,3.8,15.2,Credit Card,Takeaway,2024-06-19
+T0477,Coffee,3,2.5,7.5,Mobile Pay,Drive-through,2024-03-22
+T0486,Tea,1,1.8,1.8,Credit Card,In-store,2024-01-31
+T0372,Juice,4,2.8,11.2,Mobile Pay,Drive-through,2024-01-19
+T0266,Muffin,1,2.2,2.2,Debit Card,In-store,2024-02-16
+T0073,Espresso,4,2.0,8.0,Credit Card,In-store,2024-03-19
+T0307,Muffin,2,2.2,4.4,Cash,Takeaway,2024-05-23
+T0485,Sandwich,2,4.5,9.0,Mobile Pay,In-store,2024-03-26
+T0325,Cookie,2,1.5,3.0,Mobile Pay,In-store,2024-04-05
+T0157,Tea,1,1.8,1.8,Credit Card,In-store,2024-05-22
+T0306,Espresso,3,2.0,6.0,Debit Card,Drive-through,2024-06-27
+T0003,Coffee,1,2.5,2.5,Cash,In-store,2024-02-29
+T0213,Juice,3,2.8,8.4,Credit Card,Takeaway,2024-05-03
+T0272,Cake,1,3.2,ERROR,Cash,Takeaway,2024-04-23
+T0421,SANDWICH  ,3,4.5,13.5,Credit Card,Takeaway,2024-03-14
+T0334,Tea,4,1.8,7.2,Cash,Drive-through,2024-03-31
+T0499,Coffee,4,2.5,10.0,Credit Card,ERROR,2024-02-29
+T0317,Juice,2,2.8,ERROR,Credit Card,Takeaway,2024-04-30
+T0081,Cappuccino,1,3.5,3.5,Credit Card,Takeaway,2024-03-25
+T0187,Sandwich,3,4.5,13.5,Mobile Pay,Takeaway,2024-04-30
+T0406,Espresso,3,2.0,6.0,Mobile Pay,Drive-through,2024-04-26
+T0011,Tea,3,1.8,5.4,Credit Card,Drive-through,2024-01-18
+T0232,Cappuccino,2,3.5,7.0,Mobile Pay,Takeaway,2024-04-04
+T0280,Cappuccino,3,3.5,10.5,Cash,Takeaway,2024-01-11
+T0064,Sandwich,3,4.5,13.5,Cash,Drive-through,2024-05-21
+T0065,Tea,1,1.8,1.8,Credit Card,Takeaway,2024-01-30
+T0062,Sandwich,3,4.5,13.5,Credit Card,Takeaway,2024-01-18
+T0479,Espresso,4,2.0,ERROR,Credit Card,In-store,2024-03-17
+T0318,Cappuccino,3,3.5,ERROR,Mobile Pay,Takeaway,2024-03-13
+T0286,Cake,4,3.2,12.8,Cash,Takeaway,2024-03-20
+T0054,Coffee,1,2.5,2.5,Mobile Pay,Drive-through,2024-05-15
+T0200,Cookie,4,-1.5,6.0,Cash,Takeaway,2024-06-21
+T0313,Sandwich,1,4.5,4.5,Debit Card,Drive-through,2024-02-03
+T0155,Juice,1,2.8,2.8,Cash,Takeaway,2024-05-05
+T0340,Latte,3,3.8,11.4,Credit Card,In-store,2024-03-31
+T0082,Tea,1,1.8,1.8,Debit Card,Takeaway,2024-06-13
+T0009,COOKIE  ,3,1.5,ERROR,Cash,Drive-through,2024-04-27
+T0346,Cappuccino,3,3.5,ERROR,Debit Card,In-store,2024-06-16
+T0276,Muffin,1,2.2,2.2,Cash,In-store,2024-03-18
+T0142,Juice,2,2.8,5.6,Mobile Pay,Drive-through,2024-05-05
+T0189,Cake,2,3.2,6.4,Cash,Takeaway,2024-04-16
+T0097,Tea,2,1.8,3.6,Credit Card,In-store,2024-01-07
+T0086,Muffin,1,2.2,2.2,Mobile Pay,Drive-through,2024-02-18
+T0400,Muffin,3,2.2,6.6,Cash,Takeaway,2024-01-14
+T0462,Tea,4,1.8,7.2,Credit Card,ERROR,2024-06-13
+T0304,Latte,4,3.8,15.2,Debit Card,Takeaway,2024-06-17
+T0122,Tea,4,1.8,7.2,Debit Card,In-store,2024-04-30
+T0410,Cookie,3,1.5,4.5,Cash,Takeaway,2024-05-29
+T0038,Coffee,2,2.5,5.0,Credit Card,In-store,2024-01-19
+T0384,Coffee,4,2.5,10.0,Debit Card,Drive-through,2024-03-18
+T0320,Espresso,3,2.0,6.0,Cash,Drive-through,2024-05-03
+T0138,Muffin,3,2.2,6.6,Cash,Takeaway,2024-03-24
+T0223,Juice,3,2.8,8.4,UNKNOWN,In-store,2024-04-29
+T0363,Sandwich,1,4.5,4.5,Debit Card,Takeaway,2024-06-29
+T0349,Juice,4,2.8,11.2,Debit Card,Drive-through,2024-03-09
+T0341,Sandwich,3,4.5,13.5,Credit Card,Drive-through,2024-04-28
+T0402,Latte,4,3.8,15.2,UNKNOWN,Drive-through,2024-03-12
+T0495,Juice,3,2.8,8.4,Debit Card,Takeaway,2024-06-13
+T0301,JUICE  ,4,2.8,11.2,Credit Card,Takeaway,2024-04-05
+T0016,Espresso,4,2.0,8.0,Mobile Pay,Takeaway,2024-06-12
+T0446,Cake,1,3.2,3.2,Debit Card,Drive-through,2024-04-02
+T0396,Muffin,4,2.2,8.8,Credit Card,In-store,2024-05-29
+T0037,Latte,2,3.8,7.6,Credit Card,In-store,2024-03-27
+T0416,Cappuccino,4,3.5,14.0,Mobile Pay,Drive-through,2024-01-16
+T0217,Coffee,4,2.5,10.0,Debit Card,In-store,2024-06-04
+T0165,Cappuccino,3,3.5,10.5,Credit Card,Takeaway,2024-01-30
+T0467,Sandwich,4,4.5,18.0,Mobile Pay,In-store,2024-03-04
+T0108,Latte,3,3.8,11.4,Credit Card,Takeaway,2024-03-26
+T0409,Sandwich,4,4.5,18.0,Debit Card,Takeaway,2024-01-05
+T0295,Tea,4,1.8,7.2,Mobile Pay,In-store,2024-01-15
+T0293,Latte,4,3.8,15.2,Mobile Pay,Drive-through,2024-03-18
+T0290,,2,3.5,7.0,UNKNOWN,Drive-through,2024-01-20
+T0447,Cappuccino,1,3.5,3.5,Cash,Takeaway,2024-03-19
+T0093,Coffee,3,2.5,7.5,Debit Card,In-store,2024-04-20
+T0209,Espresso,2,2.0,4.0,Mobile Pay,Drive-through,2024-03-06
+T0288,Sandwich,1,4.5,4.5,Credit Card,Takeaway,2024-03-30
+T0453,Sandwich,3,4.5,13.5,Cash,Drive-through,2024-01-29
+T0148,Cookie,1,1.5,1.5,Credit Card,In-store,2024-02-25
+T0135,Tea,4,1.8,7.2,Mobile Pay,Takeaway,2024-05-31
+T0333,Cake,1,3.2,3.2,UNKNOWN,Drive-through,2024-02-06
+T0075,Cappuccino,1,3.5,3.5,Debit Card,Drive-through,2024-04-14
+T0478,Muffin,4,2.2,8.8,Credit Card,Takeaway,2024-04-06
+T0368,Espresso,3,2.0,6.0,Credit Card,In-store,2024-02-21
+T0381,Espresso,2,2.0,4.0,Debit Card,Drive-through,2024-01-11
+T0442,Muffin,4,2.2,8.8,Debit Card,In-store,2024-04-12
+T0281,Muffin,1,2.2,2.2,Mobile Pay,In-store,2024-03-21
+T0480,Espresso,4,2.0,8.0,Cash,Drive-through,2024-04-15
+T0013,Latte,4,3.8,15.2,Debit Card,Takeaway,2024-06-11
+T0436,JUICE  ,2,2.8,5.6,Debit Card,In-store,2024-01-03
+T0310,Coffee,3,2.5,7.5,Debit Card,In-store,2024-02-24
+T0491,Cookie,2,1.5,3.0,Debit Card,Takeaway,2024-04-15
+T0173,Espresso,4,2.0,8.0,Mobile Pay,Takeaway,2024-02-16
+T0355,Coffee,1,2.5,2.5,Mobile Pay,ERROR,2024-05-11
+T0305,Cake,2,3.2,6.4,Debit Card,In-store,2024-05-29
+T0246,Coffee,2,2.5,5.0,Mobile Pay,Drive-through,2024-01-30
+T0264,Juice,2,2.8,5.6,Cash,Takeaway,2024-05-22
+T0005,Sandwich,4,4.5,18.0,UNKNOWN,Takeaway,2024-05-30
+T0374,Sandwich,3,4.5,13.5,Credit Card,Drive-through,2024-06-12
+T0297,Cake,4,3.2,12.8,Mobile Pay,Drive-through,2024-05-21
+T0145,Cookie,4,1.5,6.0,Debit Card,Takeaway,2024-05-20
+T0055,Espresso,1,2.0,ERROR,Cash,In-store,2024-01-18
+T0164,Tea,3,1.8,5.4,Mobile Pay,In-store,2024-06-24
+T0203,Tea,2,1.8,3.6,Cash,Takeaway,2024-01-26
+T0221,Cookie,4,1.5,ERROR,Credit Card,In-store,2024-02-03
+T0352,Cookie,3,1.5,4.5,Debit Card,Takeaway,2024-06-03
+T0379,Sandwich,3,4.5,13.5,Credit Card,Drive-through,99/99/9999
+T0308,Muffin,3,2.2,6.6,Credit Card,Drive-through,2024-06-28
+T0107,SANDWICH  ,4,4.5,18.0,Credit Card,Takeaway,2024-04-22
+T0399,Latte,4,3.8,15.2,Credit Card,Takeaway,2024-04-03
+T0389,Muffin,2,2.2,4.4,UNKNOWN,Drive-through,2024-05-23
+T0025,Cake,4,3.2,12.8,Debit Card,Drive-through,2024-01-03
+T0044,Coffee,1,2.5,2.5,Cash,Takeaway,2024-03-27
+T0267,Tea,3,1.8,5.4,Debit Card,Takeaway,2024-01-02
+T0376,Coffee,1,2.5,2.5,Credit Card,Takeaway,2024-02-12
+T0405,Cake,4,3.2,12.8,Cash,In-store,99/99/9999
+T0323,Muffin,1,2.2,2.2,Credit Card,Takeaway,2024-03-30
+T0083,Sandwich,4,4.5,18.0,Debit Card,In-store,2024-01-30
+T0167,Latte,1,3.8,3.8,Credit Card,Takeaway,2024-06-01
+T0484,Cake,1,3.2,3.2,Cash,In-store,2024-05-30
+T0366,Espresso,4,2.0,8.0,Cash,Drive-through,2024-03-22
+T0125,,2,2.5,5.0,Credit Card,In-store,2024-05-01
+T0413,Espresso,4,2.0,ERROR,Credit Card,Drive-through,2024-03-03
+T0102,Sandwich,4,4.5,18.0,Cash,Drive-through,2024-03-04
+T0449,Tea,3,1.8,5.4,Credit Card,In-store,2024-02-04
+T0077,Muffin,1,2.2,ERROR,Credit Card,Drive-through,2024-03-26
+T0133,Juice,1,2.8,2.8,Mobile Pay,Takeaway,2024-06-11
+T0341,Sandwich,3,4.5,13.5,Credit Card,Drive-through,2024-04-28
+T0151,Coffee,2,2.5,5.0,Debit Card,In-store,2024-01-14
+T0068,Tea,4,1.8,7.2,Debit Card,In-store,2024-01-24
+T0027,Muffin,2,2.2,4.4,Mobile Pay,In-store,2024-03-08
+T0337,SANDWICH  ,1,4.5,4.5,Mobile Pay,Takeaway,2024-01-12
+T0361,Muffin,3,2.2,6.6,Debit Card,In-store,2024-01-30
+T0113,Coffee,4,2.5,10.0,Mobile Pay,In-store,2024-03-31
+T0303,Cake,1,3.2,3.2,Debit Card,In-store,2024-03-25
+T0492,,2,2.5,5.0,Credit Card,In-store,2024-03-07
+T0371,Cake,1,3.2,3.2,Cash,Takeaway,2024-04-11
+T0028,Sandwich,2,4.5,9.0,Cash,Drive-through,2024-03-17
+T0259,Latte,1,3.8,3.8,Cash,In-store,2024-04-20
+T0358,Cookie,3,1.5,ERROR,Mobile Pay,Drive-through,2024-01-09
+T0111,Muffin,3,2.2,6.6,Mobile Pay,Takeaway,2024-01-16
+T0464,Muffin,1,2.2,2.2,Credit Card,Drive-through,2024-03-30
+T0205,Coffee,1,2.5,2.5,Debit Card,In-store,2024-03-16
+T0231,Coffee,3,2.5,7.5,Mobile Pay,In-store,2024-01-25
+T0191,Cake,4,3.2,12.8,Credit Card,Takeaway,2024-05-17
+T0248,Cake,1,3.2,ERROR,Mobile Pay,Drive-through,2024-02-26
+T0206,Cookie,3,1.5,4.5,Mobile Pay,In-store,2024-03-03
+T0395,Juice,3,2.8,8.4,Mobile Pay,In-store,2024-01-24
+T0171,Muffin,3,2.2,6.6,Debit Card,In-store,2024-01-24
+T0417,Espresso,2,2.0,ERROR,Debit Card,Drive-through,2024-05-02
+T0378,Tea,1,1.8,1.8,Debit Card,In-store,2024-06-11
+T0057,Cake,2,3.2,6.4,Cash,Drive-through,2024-01-21
+T0149,Juice,3,2.8,8.4,Debit Card,In-store,2024-02-19
+T0242,Cake,1,3.2,3.2,Debit Card,In-store,2024-02-03
+T0088,Sandwich,2,4.5,9.0,UNKNOWN,Takeaway,2024-01-18
+T0091,Tea,2,1.8,3.6,Credit Card,Takeaway,2024-06-19
+T0098,Coffee,2,2.5,5.0,Mobile Pay,Drive-through,2024-01-19
+T0059,Cookie,2,1.5,3.0,Debit Card,Takeaway,2024-02-03
+T0117,Muffin,2,2.2,4.4,Mobile Pay,In-store,2024-06-08
+T0305,Cake,2,3.2,6.4,Debit Card,In-store,2024-05-29
+T0070,Espresso,3,2.0,6.0,Credit Card,Drive-through,2024-04-23
+T0339,Cookie,1,1.5,1.5,Debit Card,In-store,2024-06-17
+T0309,Sandwich,1,4.5,4.5,Mobile Pay,Drive-through,2024-04-02
+T0342,Juice,2,2.8,ERROR,Credit Card,In-store,2024-04-27
+T0404,Cookie,3,1.5,4.5,Debit Card,In-store,2024-02-20
+T0214,Latte,2,3.8,7.6,Mobile Pay,Drive-through,2024-04-01
+T0322,Espresso,3,2.0,6.0,Mobile Pay,Drive-through,2024-02-07
+T0390,Latte,3,3.8,11.4,Credit Card,Takeaway,2024-02-01
+T0387,Juice,4,2.8,11.2,Credit Card,Takeaway,99/99/9999
+T0360,Juice,1,2.8,2.8,UNKNOWN,Drive-through,2024-04-03
+T0324,Coffee,4,2.5,10.0,Cash,Takeaway,2024-05-08
+T0498,Coffee,1,2.5,2.5,Cash,Drive-through,2024-01-13
+T0226,Tea,1,1.8,1.8,Mobile Pay,Takeaway,2024-06-21
+T0090,Sandwich,3,4.5,13.5,Mobile Pay,Takeaway,2024-04-13
+T0329,Coffee,1,2.5,2.5,Cash,Takeaway,2024-02-25
+T0391,Tea,4,1.8,7.2,Credit Card,In-store,2024-01-25
+T0473,Coffee,2,2.5,5.0,Debit Card,In-store,2024-05-27
+T0440,Juice,3,2.8,8.4,UNKNOWN,ERROR,2024-03-27
+T0458,Juice,1,2.8,2.8,Mobile Pay,Drive-through,2024-03-19
+T0015,Tea,1,1.8,1.8,Credit Card,Drive-through,2024-03-03
+T0490,Sandwich,4,4.5,18.0,Mobile Pay,In-store,2024-04-30
+T0294,Tea,1,1.8,1.8,Debit Card,Drive-through,2024-01-19
+T0121,Cappuccino,4,3.5,14.0,Debit Card,Takeaway,2024-04-07
+T0043,Muffin,3,2.2,6.6,UNKNOWN,Takeaway,2024-04-29
+T0197,Cake,3,3.2,9.6,Cash,Takeaway,99/99/9999
+T0034,Sandwich,2,4.5,9.0,Debit Card,Drive-through,2024-06-04
+T0474,COOKIE  ,3,1.5,4.5,Credit Card,Takeaway,2024-02-06
+T0428,Tea,2,-1.8,3.6,Cash,Drive-through,2024-05-30
+T0283,Muffin,3,2.2,ERROR,UNKNOWN,Takeaway,2024-01-06
+T0383,Tea,2,1.8,3.6,Mobile Pay,Drive-through,2024-06-12
+T0302,Tea,4,1.8,7.2,Mobile Pay,Takeaway,2024-06-22
+T0289,ESPRESSO  ,2,-2.0,4.0,Cash,In-store,2024-03-06
+T0017,SANDWICH  ,2,4.5,9.0,UNKNOWN,In-store,2024-02-28
+T0159,Tea,4,1.8,7.2,Debit Card,Drive-through,2024-06-07
+T0244,Coffee,2,2.5,5.0,UNKNOWN,ERROR,2024-03-01
+T0067,Cappuccino,3,3.5,10.5,Credit Card,Drive-through,2024-06-11
+T0422,Cappuccino,4,3.5,14.0,Debit Card,Takeaway,2024-03-30
+T0441,Tea,2,1.8,3.6,Credit Card,Drive-through,2024-06-12
+T0120,Espresso,1,2.0,2.0,Debit Card,Takeaway,2024-03-24
+T0452,Cappuccino,2,3.5,7.0,Cash,Drive-through,2024-04-24
+T0066,Latte,2,3.8,7.6,Debit Card,Takeaway,2024-06-03
+T0469,Latte,1,3.8,3.8,Mobile Pay,Drive-through,2024-01-05
+T0010,Sandwich,1,4.5,4.5,Mobile Pay,In-store,2024-05-21
+T0019,Cappuccino,3,3.5,10.5,Credit Card,Drive-through,2024-05-07
+T0154,,3,-2.8,8.4,Credit Card,In-store,2024-03-05
+T0300,Cookie,1,1.5,1.5,Credit Card,In-store,2024-03-04
+T0257,Latte,3,3.8,11.4,Mobile Pay,Takeaway,2024-06-19
+T0311,Cookie,4,1.5,6.0,Credit Card,In-store,2024-02-05
+T0273,Muffin,4,2.2,ERROR,Mobile Pay,Takeaway,2024-03-10
+T0134,Juice,2,2.8,5.6,Mobile Pay,In-store,2024-05-13
+T0494,Cookie,2,1.5,3.0,Mobile Pay,Drive-through,2024-03-03
+T0254,Tea,4,1.8,7.2,Mobile Pay,In-store,2024-06-28
+T0271,Cookie,1,1.5,1.5,Cash,ERROR,2024-02-10
+T0162,SANDWICH  ,1,4.5,4.5,Credit Card,In-store,2024-04-14
+T0287,Cookie,2,1.5,3.0,Debit Card,In-store,2024-01-20
+T0359,Cake,2,3.2,6.4,Mobile Pay,Takeaway,2024-04-05
+T0338,Muffin,3,2.2,ERROR,Debit Card,Drive-through,2024-01-05
+T0343,Coffee,3,2.5,7.5,Credit Card,In-store,2024-02-21
+T0430,Cappuccino,2,3.5,7.0,Cash,In-store,2024-04-15
+T0002,Espresso,1,2.0,2.0,Cash,Drive-through,2024-04-18
+T0225,Muffin,3,2.2,6.6,Cash,Takeaway,2024-01-04
+T0208,,4,3.8,15.2,UNKNOWN,Takeaway,2024-05-29
+T0118,Sandwich,1,4.5,4.5,Mobile Pay,ERROR,2024-05-24
+T0427,Cappuccino,2,3.5,7.0,Debit Card,Drive-through,2024-06-27
+T0403,Cake,1,3.2,3.2,Credit Card,In-store,2024-04-10
+T0365,CAPPUCCINO  ,1,3.5,3.5,Credit Card,In-store,2024-04-25
+T0265,Cookie,1,1.5,1.5,Debit Card,Drive-through,2024-02-27
+T0275,Tea,4,1.8,ERROR,Debit Card,In-store,2024-02-26
+T0071,Sandwich,4,4.5,18.0,Cash,In-store,2024-01-20
+T0129,Muffin,4,2.2,8.8,Credit Card,In-store,2024-05-31
+T0451,Cookie,4,1.5,6.0,Mobile Pay,Drive-through,2024-06-19
+T0099,Juice,4,2.8,ERROR,Credit Card,Drive-through,2024-06-27
+T0369,Espresso,2,2.0,4.0,Mobile Pay,In-store,2024-04-02
+T0022,Cookie,2,1.5,3.0,Credit Card,ERROR,2024-05-06
+T0194,Cappuccino,4,3.5,14.0,UNKNOWN,Takeaway,2024-01-12
+T0006,Tea,1,1.8,1.8,Credit Card,Drive-through,2024-04-18
+T0414,Coffee,1,2.5,2.5,Credit Card,In-store,2024-04-22
+T0314,Cake,4,3.2,12.8,Credit Card,In-store,2024-02-16
+T0136,Tea,3,1.8,5.4,Credit Card,In-store,2024-03-12
+T0439,Tea,2,1.8,3.6,Cash,Takeaway,2024-02-11
+T0380,Cake,1,3.2,3.2,Credit Card,Drive-through,2024-05-28
+T0328,Juice,2,2.8,5.6,Mobile Pay,Takeaway,2024-06-06
+T0199,Muffin,2,2.2,4.4,Cash,Takeaway,2024-03-08
+T0496,Juice,4,2.8,11.2,Credit Card,Drive-through,2024-03-31
+T0204,,4,3.8,15.2,Credit Card,Drive-through,2024-03-17
+T0068,Tea,4,1.8,7.2,Debit Card,In-store,2024-01-24
+T0224,Latte,2,3.8,7.6,Credit Card,Drive-through,2024-06-21
+T0128,Latte,1,3.8,3.8,Debit Card,Drive-through,2024-06-22
+T0144,MUFFIN  ,2,2.2,4.4,Debit Card,Drive-through,2024-05-28
+T0327,Cookie,2,1.5,ERROR,UNKNOWN,In-store,2024-03-14
+T0140,Cookie,3,1.5,4.5,Debit Card,Drive-through,2024-01-03
+T0219,Espresso,1,2.0,2.0,Cash,Takeaway,2024-04-22
+T0480,Espresso,4,2.0,8.0,Cash,Drive-through,2024-04-15
+T0331,Tea,1,1.8,1.8,UNKNOWN,In-store,2024-04-17
+T0158,Muffin,2,2.2,4.4,Mobile Pay,Takeaway,2024-04-23
+T0095,Cappuccino,4,3.5,14.0,Credit Card,Drive-through,2024-01-22
+T0256,Muffin,3,2.2,6.6,UNKNOWN,Takeaway,2024-04-16
+T0475,Sandwich,2,4.5,9.0,Mobile Pay,Takeaway,2024-03-11
+T0132,Cookie,1,1.5,1.5,Debit Card,In-store,2024-04-17
+T0227,Tea,4,1.8,7.2,Debit Card,In-store,2024-06-21
+T0040,LATTE  ,2,3.8,7.6,Debit Card,Drive-through,2024-05-04
+T0483,Latte,2,3.8,7.6,Cash,Takeaway,2024-04-06
+T0493,SANDWICH  ,4,4.5,18.0,Debit Card,In-store,2024-02-20
+T0190,Cookie,3,1.5,4.5,Cash,Takeaway,2024-03-17
+T0448,Espresso,4,2.0,8.0,Debit Card,Drive-through,2024-01-31
+T0435,,4,-2.0,8.0,Credit Card,In-store,2024-04-11
+T0249,Cake,1,3.2,3.2,Debit Card,Takeaway,2024-06-13
+T0039,COFFEE  ,2,2.5,5.0,Cash,In-store,2024-03-25
+T0243,Sandwich,3,4.5,13.5,Credit Card,In-store,2024-06-18
+T0354,Coffee,3,2.5,7.5,Mobile Pay,Takeaway,2024-06-12
+T0412,Cake,2,3.2,6.4,Cash,Drive-through,2024-05-02
+T0139,ESPRESSO  ,4,2.0,8.0,Credit Card,Takeaway,2024-03-07
+T0023,Latte,1,3.8,3.8,Cash,In-store,2024-06-09
+T0160,Coffee,1,2.5,2.5,Credit Card,Drive-through,2024-02-24
+T0026,Latte,3,3.8,11.4,Debit Card,In-store,2024-03-16
+T0184,Cappuccino,2,3.5,7.0,Debit Card,Drive-through,2024-01-04
+T0241,Cake,2,3.2,6.4,Credit Card,Takeaway,2024-02-07
+T0014,Cookie,2,1.5,3.0,Debit Card,Takeaway,2024-02-23
+T0146,Cookie,3,1.5,4.5,Mobile Pay,Takeaway,2024-03-19
+T0456,Cake,4,3.2,12.8,Cash,Drive-through,2024-04-24
+T0315,Cake,2,3.2,6.4,Mobile Pay,In-store,2024-04-15
+T0362,Coffee,2,2.5,5.0,Mobile Pay,Drive-through,2024-04-09
+T0079,Latte,4,3.8,15.2,Cash,Takeaway,2024-02-26
+T0321,Cookie,1,1.5,1.5,Cash,Takeaway,2024-01-22
+T0419,Sandwich,3,4.5,13.5,Debit Card,Drive-through,2024-06-23
+T0500,Latte,2,3.8,7.6,Cash,In-store,2024-05-09
+T0392,Coffee,3,2.5,7.5,Mobile Pay,Drive-through,2024-04-17
+T0053,Cappuccino,1,3.5,3.5,Cash,Drive-through,2024-03-21
+T0459,Coffee,4,2.5,10.0,Debit Card,ERROR,2024-02-25
+T0035,Muffin,2,2.2,4.4,Credit Card,Drive-through,2024-03-20
+T0335,Cappuccino,4,3.5,14.0,UNKNOWN,Drive-through,2024-06-20
+T0489,Sandwich,3,4.5,13.5,Debit Card,Takeaway,2024-04-02
+T0377,Espresso,3,2.0,6.0,Credit Card,Takeaway,2024-05-12
+T0185,Sandwich,4,4.5,18.0,Cash,In-store,2024-01-30
+T0312,Espresso,1,2.0,2.0,Debit Card,In-store,2024-05-09
+T0326,Cappuccino,1,3.5,3.5,Debit Card,In-store,2024-06-15
+T0188,Cappuccino,4,3.5,14.0,Credit Card,Takeaway,2024-02-18
+T0285,Latte,4,3.8,15.2,Cash,In-store,2024-04-21
+T0388,Espresso,3,2.0,6.0,Debit Card,Drive-through,2024-03-29
+T0463,Muffin,3,2.2,6.6,Mobile Pay,Takeaway,2024-04-06
+T0166,Sandwich,2,4.5,9.0,Credit Card,Takeaway,2024-02-06
+T0398,Cake,4,3.2,12.8,Debit Card,Drive-through,2024-01-03
+T0299,Juice,2,2.8,5.6,Cash,Takeaway,2024-01-27
+T0024,ESPRESSO  ,4,2.0,8.0,Cash,Takeaway,2024-04-07
+T0470,Cappuccino,2,3.5,7.0,Cash,In-store,2024-06-01
+T0348,Muffin,4,2.2,8.8,Mobile Pay,Takeaway,2024-02-17
+T0424,,4,4.5,18.0,Mobile Pay,Takeaway,2024-02-07
+T0183,Juice,1,2.8,2.8,Cash,Drive-through,2024-06-04
+T0344,Coffee,3,2.5,7.5,Debit Card,Drive-through,2024-04-11
+T0042,Muffin,2,2.2,4.4,UNKNOWN,In-store,2024-06-17
+T0357,,1,2.8,2.8,Credit Card,In-store,2024-03-01
+T0237,Cookie,1,1.5,1.5,Mobile Pay,Takeaway,2024-02-18
+T0432,Coffee,2,2.5,5.0,Mobile Pay,Drive-through,2024-05-01
+T0351,,3,2.0,6.0,Debit Card,In-store,2024-01-21
+T0076,Cake,2,3.2,6.4,Credit Card,In-store,2024-02-15
+T0032,Cappuccino,1,3.5,3.5,Cash,Drive-through,2024-05-04
+T0350,Latte,4,3.8,15.2,Cash,Takeaway,2024-06-03
+T0046,Juice,2,2.8,5.6,Mobile Pay,In-store,2024-03-12
+T0468,Juice,3,2.8,ERROR,Credit Card,Takeaway,2024-02-18
+T0109,Cookie,1,1.5,1.5,Credit Card,ERROR,2024-02-29
+T0106,Juice,3,2.8,8.4,Credit Card,Drive-through,2024-03-11
+T0150,Tea,2,1.8,3.6,Debit Card,In-store,2024-03-18
+T0030,Sandwich,1,4.5,4.5,Debit Card,Takeaway,2024-01-05
+T0182,,2,1.8,3.6,Debit Card,Takeaway,2024-06-27
+T0110,Muffin,2,2.2,4.4,Credit Card,In-store,2024-04-16
+T0123,Coffee,1,2.5,2.5,Debit Card,In-store,2024-06-15
+T0472,Muffin,4,2.2,8.8,Credit Card,Drive-through,2024-02-25
+T0105,Muffin,4,2.2,8.8,Credit Card,Drive-through,2024-05-01
+T0061,Juice,1,2.8,2.8,Cash,Drive-through,2024-02-24
+T0147,Tea,2,1.8,ERROR,Cash,Drive-through,2024-02-19
+T0084,Tea,2,-1.8,3.6,Debit Card,In-store,2024-01-28
+T0316,Cookie,2,1.5,ERROR,Mobile Pay,Drive-through,2024-03-13
+T0382,Coffee,1,2.5,2.5,Cash,Drive-through,2024-05-27
+T0423,Sandwich,3,4.5,13.5,Debit Card,In-store,2024-05-26
+T0433,Juice,2,2.8,5.6,UNKNOWN,Takeaway,2024-03-14
+T0228,Cappuccino,4,3.5,14.0,Cash,Drive-through,2024-05-23
+T0443,Latte,2,3.8,7.6,Credit Card,Takeaway,2024-03-23
+T0152,Sandwich,3,4.5,13.5,Credit Card,Drive-through,2024-05-05
+T0001,Latte,1,3.8,3.8,Debit Card,In-store,2024-02-27
+T0268,Espresso,2,2.0,4.0,Mobile Pay,In-store,2024-02-06
+T0454,Coffee,2,2.5,5.0,Credit Card,In-store,2024-03-24
+T0089,Cookie,3,1.5,4.5,Cash,Drive-through,2024-03-17
+T0078,Muffin,2,2.2,4.4,Debit Card,In-store,2024-06-28
+T0269,Coffee,1,2.5,ERROR,Credit Card,Takeaway,2024-04-17
+T0418,,4,4.5,18.0,Debit Card,In-store,2024-04-27
+T0124,Latte,1,-3.8,ERROR,Cash,In-store,2024-02-21
+T0298,Coffee,4,2.5,10.0,Credit Card,Takeaway,2024-06-03
+T0370,Sandwich,3,4.5,ERROR,Mobile Pay,Drive-through,2024-02-03
+T0096,Tea,3,1.8,5.4,Cash,In-store,2024-06-21
+T0488,Sandwich,3,4.5,13.5,Debit Card,Takeaway,2024-04-29
+T0012,Coffee,2,2.5,5.0,Debit Card,In-store,2024-02-29
+T0115,Cake,2,3.2,6.4,Mobile Pay,In-store,2024-03-10
+T0332,Cake,4,3.2,12.8,Cash,In-store,2024-05-07
+T0429,Cappuccino,2,3.5,7.0,Cash,Drive-through,2024-05-15
+T0258,Tea,3,1.8,ERROR,Credit Card,Drive-through,2024-05-01
+T0220,Coffee,3,2.5,7.5,Credit Card,In-store,2024-03-16
+T0438,Sandwich,4,4.5,18.0,Credit Card,Drive-through,2024-04-29
+T0253,Cake,3,3.2,9.6,Mobile Pay,Drive-through,2024-05-15
+T0353,Muffin,2,2.2,4.4,Mobile Pay,Takeaway,99/99/9999
+T0481,Muffin,2,2.2,4.4,Mobile Pay,In-store,2024-03-06
+T0262,Muffin,1,2.2,2.2,Debit Card,Drive-through,2024-03-20
+T0444,Cappuccino,1,3.5,3.5,Debit Card,Takeaway,2024-03-01
+T0179,Latte,4,3.8,15.2,Cash,Drive-through,2024-05-18
+T0411,Tea,1,1.8,1.8,Mobile Pay,Takeaway,2024-06-16
+T0279,ESPRESSO  ,2,2.0,4.0,Mobile Pay,Drive-through,2024-06-29
+T0020,Muffin,4,2.2,8.8,Credit Card,Takeaway,2024-02-05
+T0356,Espresso,1,2.0,2.0,Credit Card,Drive-through,2024-06-22
+T0170,Juice,4,2.8,11.2,UNKNOWN,Drive-through,99/99/9999
+T0240,Espresso,2,2.0,4.0,Cash,Drive-through,2024-02-23
+T0278,Latte,1,3.8,3.8,Mobile Pay,Drive-through,2024-04-20
+T0161,Tea,1,1.8,1.8,Credit Card,In-store,2024-02-14
+T0074,COOKIE  ,1,1.5,1.5,Debit Card,In-store,2024-06-23
+T0018,Coffee,3,2.5,7.5,Mobile Pay,Takeaway,2024-01-17
+T0063,Cappuccino,3,3.5,10.5,Debit Card,In-store,2024-04-22
+T0250,Coffee,1,2.5,ERROR,Mobile Pay,Takeaway,2024-04-19
+T0229,Cookie,2,1.5,3.0,Cash,Drive-through,2024-04-28
+T0239,Cake,1,3.2,3.2,Cash,Takeaway,2024-03-03
+T0230,Tea,4,1.8,7.2,Cash,In-store,2024-01-12
+T0319,Muffin,4,2.2,8.8,Credit Card,In-store,2024-06-03
+T0284,Cookie,2,1.5,3.0,Mobile Pay,Drive-through,2024-04-02
+T0048,Latte,1,3.8,3.8,UNKNOWN,In-store,2024-03-01
+T0251,Latte,4,3.8,15.2,Mobile Pay,In-store,2024-01-21
+T0080,Cappuccino,4,3.5,14.0,Debit Card,Takeaway,2024-02-28
+T0296,Cookie,3,1.5,4.5,Cash,Drive-through,2024-01-24
+T0487,Juice,2,2.8,5.6,Credit Card,Takeaway,2024-03-02
+T0021,Cappuccino,3,3.5,10.5,Mobile Pay,Drive-through,2024-04-12
+T0457,Coffee,4,2.5,10.0,Credit Card,Drive-through,2024-04-16
+T0425,Tea,1,1.8,1.8,Debit Card,Drive-through,2024-01-21
+T0141,Sandwich,2,4.5,ERROR,Cash,In-store,2024-04-14
+T0193,Muffin,4,2.2,8.8,Debit Card,In-store,2024-06-27
+T0131,Latte,1,3.8,3.8,Debit Card,Drive-through,2024-04-19
+T0216,Muffin,3,2.2,6.6,Cash,Drive-through,2024-06-24
+T0245,Cake,3,3.2,9.6,Cash,In-store,2024-03-08
+T0364,Juice,2,2.8,5.6,Debit Card,Drive-through,2024-05-05
+T0060,Tea,4,1.8,7.2,Debit Card,In-store,2024-01-03
+T0222,Sandwich,3,4.5,13.5,Debit Card,In-store,2024-03-06
+T0177,Juice,3,2.8,8.4,Mobile Pay,Drive-through,2024-01-10
+T0450,Juice,2,2.8,5.6,Mobile Pay,Drive-through,2024-06-04
+T0056,Cake,1,3.2,3.2,Credit Card,Takeaway,2024-01-31
+T0292,Juice,3,2.8,8.4,Debit Card,In-store,2024-04-22
+T0255,Latte,2,3.8,7.6,Mobile Pay,Takeaway,2024-02-28
+T0408,,4,2.0,8.0,Debit Card,Drive-through,2024-03-27
+T0386,LATTE  ,1,3.8,3.8,Credit Card,Takeaway,2024-04-16
+T0437,Tea,1,1.8,1.8,Debit Card,Takeaway,2024-04-26
+T0198,Sandwich,4,4.5,18.0,Cash,Drive-through,2024-02-06
+T0069,Muffin,3,2.2,6.6,Cash,In-store,2024-03-26
+T0211,Sandwich,2,4.5,ERROR,Cash,Takeaway,2024-03-29
+T0233,Sandwich,4,4.5,18.0,Credit Card,Takeaway,2024-06-16
+T0202,Sandwich,1,4.5,4.5,Cash,In-store,2024-06-10
+T0169,Tea,4,1.8,7.2,Debit Card,Drive-through,2024-05-18
+T0186,Juice,1,2.8,2.8,Credit Card,Takeaway,2024-03-15
+T0036,Muffin,3,2.2,6.6,Mobile Pay,Drive-through,2024-04-25
+T0130,,1,3.5,3.5,Debit Card,Drive-through,2024-06-02
