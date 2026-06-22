@@ -39,5 +39,25 @@ services:
       - ./data:/app/data
       - ./logs:/app/logs
 
+  demo:
+    build: .
+    container_name: cafedataops_demo
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: cafedataops
+      DB_USER: cafe_user
+      DB_PASSWORD: cafe_pass
+    ports:
+      - "8502:8502"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: streamlit run dashboard/demo_pipeline.py --server.port=8502 --server.address=0.0.0.0
+
 volumes:
   postgres_data:
