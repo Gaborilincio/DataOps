@@ -1,0 +1,53 @@
+# CaféData Ops 
+Equipo de Desarrollo
+Jaime Barrales - Data Engineer
+
+Gabriel Mendez - Data Analyst
+
+Ivan Alvarez - Product Owner / Scrum Master
+
+Sección: 001D | Asignatura: Gestión de Datos para IA
+
+Pipeline Automatizado para la Optimización de Ventas y Gestión de Inventarios
+
+Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) bajo filosofía DataOps. Su objetivo es sanear, validar y estructurar los datos transaccionales degradados de una cafetería, permitiendo su almacenamiento seguro en una base de datos relacional para su posterior análisis.
+
+##Tecnologías Utilizadas
+
+* **Lenguaje:** Python 3.x
+* **Procesamiento de Datos:** Pandas
+* **Base de Datos:** PostgreSQL
+* **ORM / Conexión:** SQLAlchemy
+* **Infraestructura:** Docker y Docker Compose
+* **Gestión de Proyecto:** Scrum / Trello
+
+##Arquitectura del Pipeline
+
+El script automatizado ejecuta secuencialmente las siguientes etapas:
+
+1.  **Ingesta:** Lectura del archivo crudo (`dirty_cafe_sales.csv`).
+2.  **Limpieza y Transformación:** * Eliminación de registros duplicados.
+    * Recálculo matemático de columnas con errores (ej. `Total Spent`).
+    * Imputación de valores nulos o "ERROR" en campos categóricos (`Payment Method`, `Location`).
+    * Descarte de registros huérfanos o con fechas corruptas.
+3.  **Validación de Calidad:**
+    * Filtros semánticos para evitar valores negativos o inconsistencias lógicas.
+    * Cálculo automático del **KPI de Completitud** (Umbral mínimo aceptado: 90%).
+    * Generación de un reporte de calidad en formato `.json` y registro de eventos (`.log`).
+4.  **Carga:** Inserción de los datos saneados en la tabla `ventas_cafeteria` de PostgreSQL.
+
+##Instrucciones de Ejecución
+
+Este proyecto está completamente contenedorizado con Docker para garantizar su portabilidad.
+
+### Prerrequisitos
+* Tener [Docker](https://www.docker.com/) y Docker Compose instalados en tu máquina.
+
+### Pasos para levantar el proyecto
+
+1. Clona este repositorio:
+   git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
+   cd tu-repositorio
+
+2. Construye y levanta los contenedores:
+docker-compose up --build
