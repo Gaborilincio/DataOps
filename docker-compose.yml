@@ -38,6 +38,7 @@ services:
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
+      - ./output:/app/output 
 
   demo:
     build: .

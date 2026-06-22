@@ -1,0 +1,34 @@
+{
+  "modelo_seleccionado": "Regresión Logística",
+  "justificacion": "Mayor F1 Score — balancea precision y recall",
+  "metricas": {
+    "Random Forest": {
+      "accuracy": 0.5269,
+      "precision": 0.5098,
+      "recall": 0.5778,
+      "f1_score": 0.5417,
+      "auc_roc": 0.5606,
+      "gini": 0.1213,
+      "confusion_matrix": {
+        "TN": 23,
+        "FP": 25,
+        "FN": 19,
+        "TP": 26
+      }
+    },
+    "Regresión Logística": {
+      "accuracy": 0.5914,
+      "precision": 0.5814,
+      "recall": 0.5556,
+      "f1_score": 0.5682,
+      "auc_roc": 0.612,
+      "gini": 0.2241,
+      "confusion_matrix": {
+        "TN": 30,
+        "FP": 18,
+        "FN": 20,
+        "TP": 25
+      }
+    }
+  }
+}
