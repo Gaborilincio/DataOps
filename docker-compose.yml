@@ -58,6 +58,7 @@ services:
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
+      - ./output:/app/output
     command: streamlit run dashboard/demo_pipeline.py --server.port=8502 --server.address=0.0.0.0
 
 volumes:
