@@ -122,7 +122,7 @@ with col1:
                  labels={"Total Spent": "Ingresos ($)", "Item": ""})
     fig.update_layout(showlegend=False, coloraxis_showscale=False,
                       margin=dict(l=0, r=0, t=0, b=0), height=320)
-    st.plotly_chart(fig, use_column_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 with col2:
     st.subheader("Método de pago")
@@ -133,7 +133,7 @@ with col2:
                   hole=0.45)
     fig2.update_layout(margin=dict(l=0, r=0, t=0, b=0), height=320,
                        legend=dict(orientation="h", y=-0.15))
-    st.plotly_chart(fig2, use_column_width=True)
+    st.plotly_chart(fig2, use_container_width=True)
 
 # ── Fila 2: Ventas en el tiempo + Ubicación ───────────────────────────────────
 col3, col4 = st.columns([3, 2])
@@ -146,7 +146,7 @@ with col3:
                    color_discrete_sequence=["#f59e0b"],
                    labels={"Ingresos": "Ingresos ($)", "Fecha": ""})
     fig3.update_layout(margin=dict(l=0, r=0, t=0, b=0), height=300)
-    st.plotly_chart(fig3, use_column_width=True)
+    st.plotly_chart(fig3, use_container_width=True)
 
 with col4:
     st.subheader("Ventas por ubicación")
@@ -156,7 +156,7 @@ with col4:
                   color_discrete_sequence=["#f59e0b", "#fb923c", "#fcd34d"],
                   labels={"Total Spent": "Ingresos ($)", "Location": ""})
     fig4.update_layout(showlegend=False, margin=dict(l=0, r=0, t=0, b=0), height=300)
-    st.plotly_chart(fig4, use_column_width=True)
+    st.plotly_chart(fig4, use_container_width=True)
 
 # ── Fila 3: Heatmap día × producto ──────────────────────────────────────────
 st.subheader("Volumen de ventas: día de semana × producto")
@@ -167,7 +167,7 @@ fig5 = px.imshow(heatmap_data, color_continuous_scale="Oranges",
                  labels=dict(x="Producto", y="Día", color="Unidades"),
                  aspect="auto")
 fig5.update_layout(margin=dict(l=0, r=0, t=0, b=0), height=280)
-st.plotly_chart(fig5, use_column_width=True)
+st.plotly_chart(fig5, use_container_width=True)
 
 # ── Tabla de datos limpios ────────────────────────────────────────────────────
 with st.expander("Ver datos limpios y validados"):
@@ -175,7 +175,7 @@ with st.expander("Ver datos limpios y validados"):
         df_f[["Transaction ID","Item","Quantity","Price Per Unit",
               "Total Spent","Payment Method","Location","Transaction Date"]]
         .sort_values("Transaction Date", ascending=False),
-        use_column_width=True, height=300
+        use_container_width=True, height=300
     )
     st.download_button(
         "Descargar CSV limpio",
@@ -243,7 +243,7 @@ else:
             "Predicho: Baja (0)": [cm["TN"], cm["FN"]],
             "Predicho: Alta (1)": [cm["FP"], cm["TP"]],
         }, index=["Real: Baja (0)", "Real: Alta (1)"])
-        st.dataframe(df_cm, use_column_width=True)
+        st.dataframe(df_cm, use_container_width=True)
  
         st.markdown(f"""
         - **TP={cm['TP']}** — Ventas altas correctamente identificadas
@@ -266,7 +266,7 @@ else:
             }
             for nombre in modelos_nombres
         }).T
-        st.dataframe(df_comp.style.highlight_max(axis=0, color="#d4edda"), use_column_width=True)
+        st.dataframe(df_comp.style.highlight_max(axis=0, color="#d4edda"), use_container_width=True)
         st.caption("Verde = mejor valor por métrica")
  
     st.divider()
