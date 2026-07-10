@@ -13,5 +13,5 @@
   "completitud_pct": 91.9,
   "umbral_completitud_pct": 90.0,
   "supera_umbral": true,
-  "latencia_validacion_seg": 0.008
+  "latencia_validacion_seg": 0.007
 }

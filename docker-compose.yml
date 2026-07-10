@@ -10,8 +10,11 @@ services:
       POSTGRES_DB: cafedataops
       POSTGRES_USER: cafe_user
       POSTGRES_PASSWORD: cafe_pass
-    ports:
-      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -35,6 +38,11 @@ services:
       DB_PASSWORD: cafe_pass
     ports:
       - "8501:8501"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: 1G
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
@@ -55,6 +63,11 @@ services:
       DB_PASSWORD: cafe_pass
     ports:
       - "8502:8502"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.75'
+          memory: 768M
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs

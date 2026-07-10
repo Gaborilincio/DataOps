@@ -6,9 +6,11 @@ Ejecutar con: streamlit run demo_pipeline.py
 
 import time
 import os
+import json
 import uuid
 import datetime
 import pandas as pd
+import joblib
 import streamlit as st
 from sqlalchemy import create_engine, text
 
@@ -349,3 +351,76 @@ with st.form("form_nueva_transaccion", clear_on_submit=True):
                 st.success("🗄️ Transacción insertada en la BD correctamente.")
             except Exception as e:
                 st.warning("⚠️ Sin conexión a BD. Modo Fallback (No se guardó el registro individual en CSV por simplicidad del demo).")
+
+st.divider()
+
+# ── ETAPA 6: Predicción en vivo con Modelo IA ─────────────────────────────────
+st.markdown('<div class="etapa-header">🤖 Etapa 6 — Predicción en vivo (Modelo IA)</div>', unsafe_allow_html=True)
+st.caption("Usa el modelo real entrenado en la Fase 3 (Regresión Logística / Random Forest) para predecir "
+           "si una transacción será de venta ALTA o BAJA respecto a la mediana histórica.")
+
+RUTA_MODELO   = "output/modelo/modelo.pkl"
+RUTA_FEATURES = "output/modelo/feature_columns.json"
+
+
+@st.cache_resource
+def cargar_modelo():
+    """Carga el modelo persistido y las columnas de features que espera (one-hot encoding)."""
+    if not os.path.exists(RUTA_MODELO) or not os.path.exists(RUTA_FEATURES):
+        return None, None
+    paquete = joblib.load(RUTA_MODELO)
+    with open(RUTA_FEATURES, "r", encoding="utf-8") as f:
+        columnas = json.load(f)
+    return paquete, columnas
+
+
+paquete_modelo, columnas_modelo = cargar_modelo()
+
+if paquete_modelo is None:
+    st.warning(
+        "⚠️ No se encontró el modelo entrenado en `output/modelo/modelo.pkl`. "
+        "Ejecuta primero: `python modelo/modelo_ia.py`"
+    )
+else:
+    with st.form("form_prediccion"):
+        c1, c2 = st.columns(2)
+        with c1:
+            item_pred    = st.selectbox("Producto", ITEMS_DISPONIBLES, key="item_pred")
+            metodo_pred  = st.selectbox("Método de pago", METODOS_PAGO, key="metodo_pred")
+        with c2:
+            ubicacion_pred = st.selectbox("Ubicación", UBICACIONES, key="ubicacion_pred")
+            fecha_pred     = st.date_input("Fecha de la venta", key="fecha_pred")
+        hora_pred = st.slider("Hora del día", 0, 23, 12)
+
+        if st.form_submit_button("🔮 Predecir venta alta/baja", type="primary", use_container_width=True):
+            # Construimos la fila cruda con las mismas columnas que vio el modelo antes del one-hot
+            fila = pd.DataFrame([{
+                "Item":           item_pred,
+                "Payment Method": metodo_pred,
+                "Location":       ubicacion_pred,
+                "Hour":           hora_pred,
+                "Month":          fecha_pred.month,
+                "DayOfWeek":      fecha_pred.strftime("%A"),
+            }])
+
+            # Mismo one-hot encoding que se usó en el entrenamiento (eda_modelo.py)
+            fila_encoded = pd.get_dummies(fila, columns=["Item", "Payment Method", "Location", "DayOfWeek"])
+            # Reindexamos a las columnas EXACTAS del entrenamiento; categorías no vistas quedan en 0
+            fila_encoded = fila_encoded.reindex(columns=columnas_modelo, fill_value=0)
+
+            modelo = paquete_modelo["modelo"]
+            scaler = paquete_modelo.get("scaler")
+            X_pred = scaler.transform(fila_encoded) if scaler is not None else fila_encoded
+
+            pred  = modelo.predict(X_pred)[0]
+            proba = modelo.predict_proba(X_pred)[0][1]
+
+            if pred == 1:
+                st.success(f"🔼 **Venta ALTA** — probabilidad estimada: {proba*100:.1f}%")
+            else:
+                st.info(f"🔽 **Venta BAJA** — probabilidad de ser alta: {proba*100:.1f}%")
+
+            st.caption(
+                "Predicción generada por el modelo persistido en `output/modelo/modelo.pkl` "
+                "(mismo modelo entrenado y evaluado con F1/AUC-ROC/Gini en la Fase 3)."
+            )

@@ -13,7 +13,7 @@
 
 Pipeline Automatizado para la Optimización de Ventas y Gestión de Inventarios
 
-Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) bajo filosofía DataOps. Su objetivo es sanear, validar y estructurar los datos transaccionales degradados de una cafetería, permitiendo su almacenamiento seguro en una base de datos relacional para su posterior análisis y entrenamiento de modelos de IA.
+Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) bajo filosofía DataOps. Su objetivo es sanear, validar y estructurar los datos transaccionales degradados de una cafetería, permitiendo su almacenamiento seguro en una base de datos relacional para su posterior análisis y entrenamiento de modelos de IA, incluyendo predicción en vivo.
 
 ---
 
@@ -27,7 +27,7 @@ Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) 
 | ORM / Conexión | SQLAlchemy |
 | Infraestructura | Docker y Docker Compose |
 | Visualización | Streamlit + Plotly |
-| Modelo IA | Scikit-learn |
+| Modelo IA | Scikit-learn + Joblib (persistencia) |
 | Gestión de Proyecto | Scrum / Trello |
 
 ---
@@ -36,7 +36,7 @@ Este proyecto implementa un pipeline ETL (Extracción, Transformación y Carga) 
 
 El script automatizado ejecuta secuencialmente las siguientes etapas:
 
-1. **Ingesta:** Lectura del archivo crudo (`dirty_cafe_sales.csv`).
+1. **Ingesta:** Lectura del archivo crudo (`dirty_cafe_sales.csv`), con validación de schema (columnas requeridas).
 2. **Limpieza y Transformación:**
    - Eliminación de registros duplicados.
    - Recálculo matemático de columnas con errores (ej. `Total Spent`).
@@ -44,9 +44,24 @@ El script automatizado ejecuta secuencialmente las siguientes etapas:
    - Descarte de registros huérfanos o con fechas corruptas.
 3. **Validación de Calidad:**
    - Filtros semánticos para evitar valores negativos o inconsistencias lógicas.
+   - Detección de outliers estadísticos (±3 desviaciones estándar).
    - Cálculo automático del **KPI de Completitud** (Umbral mínimo aceptado: 90%).
    - Generación de un reporte de calidad en formato `.json` y registro de eventos (`.log`).
 4. **Carga:** Inserción de los datos saneados en la tabla `ventas_cafeteria` de PostgreSQL.
+
+---
+
+## Arquitectura de Contenedores
+
+| Servicio | Función | Puerto (host) | Recursos asignados |
+|---|---|---|---|
+| `db` | PostgreSQL 15 (motor relacional) | *interno, no expuesto* | 0.5 CPU / 512 MB |
+| `pipeline` | Corre el ETL y levanta el dashboard principal | `8501` | 1.0 CPU / 1 GB |
+| `demo` | Demo interactiva del pipeline + predicción en vivo | `8502` | 0.75 CPU / 768 MB |
+
+**Nota de seguridad:** PostgreSQL **no** expone su puerto al host. Solo `pipeline` y `demo` pueden conectarse a `db`, y lo hacen por la red interna privada que crea Docker Compose (resolviendo el nombre del servicio, no una IP pública).
+
+Los contenedores de aplicación (`pipeline`, `demo`) **no corren como root**. Un script `entrypoint.sh` ajusta los permisos de los volúmenes montados (`logs/`, `data/`, `output/`) en tiempo de ejecución y luego baja privilegios a un usuario dedicado (`appuser`) antes de ejecutar el proceso real.
 
 ---
 
@@ -55,43 +70,81 @@ El script automatizado ejecuta secuencialmente las siguientes etapas:
 ### Prerrequisitos
 - Tener [Docker](https://www.docker.com/) y Docker Compose instalados.
 
-### Levantar el proyecto
-
-1. Clona el repositorio:
+### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio
 ```
 
-2. Construye y levanta los contenedores:
+### 2. Configurar variables de entorno
+Copia el archivo de ejemplo y ajústalo si es necesario (los valores por defecto funcionan para desarrollo local):
 ```bash
-docker compose up --build
+cp .env.example .env
 ```
+
+### 3. Levantar el proyecto
+```bash
+docker compose up --build -d
+```
+El flag `-d` lo deja corriendo en segundo plano. La primera vez tarda más porque descarga la imagen de PostgreSQL e instala las dependencias de Python.
+
+### 4. Verificar que los tres servicios estén sanos
+```bash
+docker compose ps
+```
+Deberías ver `cafedataops_db` en estado `healthy`, y `cafedataops_app` / `cafedataops_demo` como `Up`.
 
 ### URLs disponibles
 
 | Servicio | URL | Descripción |
 |---|---|---|
-| Dashboard de ventas | http://localhost:8501 | Visualización de datos y métricas del modelo |
-| Demo pipeline | http://localhost:8502 | Demo interactiva del flujo ETL paso a paso |
+| Dashboard de ventas | http://localhost:8501 | KPIs, gráficos de ventas y métricas del modelo IA |
+| Demo pipeline | http://localhost:8502 | Demo interactiva del flujo ETL paso a paso + predicción en vivo |
 
 ---
 
 ## Modelo de IA
 
-El proyecto incluye un modelo de clasificación binaria que predice si una venta será de alto o bajo valor.
+El proyecto incluye un modelo de clasificación binaria que predice si una venta será de alto o bajo valor respecto a la mediana histórica, con **inferencia en vivo** disponible en la demo (Etapa 6).
 
-### Correr el EDA (análisis exploratorio):
+### 1. Correr el EDA (análisis exploratorio)
+Genera el dataset codificado (`output/eda/dataset_modelo.csv`) a partir de los datos ya cargados en PostgreSQL:
 ```bash
-docker exec cafedataops_app python modelo/eda_modelo.py
+docker exec -it --user appuser cafedataops_app python modelo/eda_modelo.py
 ```
 
-### Entrenar el modelo:
+### 2. Entrenar el modelo
+Entrena y compara Random Forest vs. Regresión Logística, genera gráficos comparativos y **persiste el modelo ganador**:
 ```bash
-docker exec cafedataops_app python modelo/modelo_ia.py
+docker exec -it --user appuser cafedataops_app python modelo/modelo_ia.py
 ```
 
-Los resultados se guardan en `output/modelo/`.
+> Siempre usa `--user appuser` en estos comandos: como el contenedor corre como usuario no-root, ejecutar sin esa bandera puede generar archivos con permisos incorrectos en los volúmenes montados.
+
+Esto genera en `output/modelo/`:
+- `01_matriz_confusion.png`, `02_curva_roc.png`, `03_comparacion_metricas.png`, `04_importancia_features.png`
+- `reporte_modelo.json` — métricas completas de ambos modelos
+- `modelo.pkl` — modelo entrenado + scaler, listo para inferencia
+- `feature_columns.json` — columnas exactas (post one-hot encoding) que el modelo espera; necesario para que la demo pueda predecir sobre una transacción nueva
+
+### 3. Probar la predicción en vivo
+Con el modelo ya entrenado, entra a **http://localhost:8502** → baja hasta **Etapa 6 — Predicción en vivo (Modelo IA)** → completa el formulario → **Predecir venta alta/baja**.
+
+Si acabas de entrenar el modelo y la demo sigue diciendo que no lo encuentra, es porque Streamlit cachea el estado en memoria. Reinicia solo ese contenedor (no hace falta bajar todo el stack):
+```bash
+docker compose restart demo
+```
+
+---
+
+## Solución de problemas comunes
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| `PermissionError` al escribir en `logs/pipeline.log` | Los volúmenes montados sobreescriben los permisos fijados en el build | Verifica que `entrypoint.sh` exista en la raíz del proyecto con saltos de línea **LF** (no CRLF), luego `docker compose build --no-cache` |
+| El puerto `8501` muestra la demo en vez del dashboard | La imagen no se reconstruyó tras un cambio en el `Dockerfile` | `docker compose down && docker compose build --no-cache && docker compose up` |
+| La demo dice "No se encontró el modelo entrenado" después de entrenarlo | Caché de `@st.cache_resource` en Streamlit | `docker compose restart demo` |
+| Cambios en el código no se reflejan | Docker está usando una imagen en caché | Agrega `--no-cache` al `build` |
 
 ---
 
@@ -100,27 +153,38 @@ Los resultados se guardan en `output/modelo/`.
 ```
 ├── dashboard/
 │   ├── app.py              # Dashboard de ventas (puerto 8501)
-│   └── demo_pipeline.py    # Demo interactiva (puerto 8502)
+│   └── demo_pipeline.py    # Demo interactiva + predicción en vivo (puerto 8502)
 ├── data/
-│   └── raw/
-│       └── dirty_cafe_sales.csv
+│   ├── raw/
+│   │   └── dirty_cafe_sales.csv
+│   └── processed/          # Fallback CSV si PostgreSQL no está disponible
 ├── data_quality/
 │   └── validacion.py
 ├── ingestion/
 │   └── lectura_csv.py
 ├── logs/
 │   ├── pipeline.log
-│   └── reporte_calidad.json
+│   ├── reporte_calidad.json
+│   └── rechazados.csv      # Auditoría de registros descartados
 ├── modelo/
 │   ├── eda_modelo.py
 │   └── modelo_ia.py
 ├── output/
 │   ├── eda/
+│   │   ├── dataset_modelo.csv
+│   │   └── eda_completo.png
 │   └── modelo/
+│       ├── modelo.pkl               # Modelo persistido para inferencia
+│       ├── feature_columns.json     # Columnas esperadas por el modelo
+│       ├── reporte_modelo.json
+│       └── *.png
 ├── procesamiento/
 │   └── transformacion.py
+├── .env.example             # Plantilla de variables de entorno (sin credenciales reales)
+├── .gitignore
 ├── docker-compose.yml
 ├── Dockerfile
+├── entrypoint.sh             # Ajusta permisos de volúmenes y baja privilegios a appuser
 ├── pipeline.py
 └── requirements.txt
 ```

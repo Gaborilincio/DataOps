@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import joblib
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -245,7 +246,7 @@ def grafico_importancia_features(mejor_nombre, mejor, feature_names):
 # 5. GUARDAR REPORTE
 # ═════════════════════════════════════════════════════════════════════════════
 
-def guardar_reporte(resultados, mejor_nombre):
+def guardar_reporte(resultados, mejor_nombre, mejor):
     reporte = {
         "modelo_seleccionado": mejor_nombre,
         "justificacion":       "Mayor F1 Score — balancea precision y recall",
@@ -269,8 +270,23 @@ def guardar_reporte(resultados, mejor_nombre):
     ruta = "output/modelo/reporte_modelo.json"
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(reporte, f, indent=2, ensure_ascii=False)
-    print(f"  ✓ {ruta}")
+    ruta_modelo = "output/modelo/modelo.pkl"
+    joblib.dump({"modelo": mejor["modelo"], "scaler": mejor.get("scaler")}, ruta_modelo)
+    print(f"  ✓ {ruta_modelo} (Modelo persistido)")
     return reporte
+
+
+
+def guardar_feature_columns(features):
+    """
+    Guarda la lista exacta de columnas (post one-hot encoding) que el modelo espera.
+    Es indispensable para la inferencia en vivo (demo_pipeline.py): sin esto no hay forma
+    de saber qué columnas dummy generar a partir de una transacción nueva sin re-entrenar.
+    """
+    ruta = "output/modelo/feature_columns.json"
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(features, f, indent=2, ensure_ascii=False)
+    print(f"  ✓ {ruta} (columnas del modelo, para inferencia en vivo)")
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -288,7 +304,8 @@ if __name__ == "__main__":
     grafico_comparacion_metricas(resultados)
     grafico_importancia_features(mejor_nombre, mejor, features)
 
-    reporte = guardar_reporte(resultados, mejor_nombre)
+    reporte = guardar_reporte(resultados, mejor_nombre, mejor)
+    guardar_feature_columns(features)
 
     m = reporte["metricas"][mejor_nombre]
     print(f"\n{'='*55}")
